@@ -8,177 +8,16 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;700&family=Fredoka:wght@300;500&display=swap"
         rel="stylesheet">
-    <style>
-        :root {
-            --bg-color: #f9f7f2;
-            --primary-green: #94a684;
-            --warm-yellow: #e4c59e;
-            --earthy-brown: #756555;
-            --text-color: #4a443f;
-            --accent-sage: #c7d3bf;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            /* Primary rounded body font */
-            font-family: 'Fredoka', sans-serif;
-            line-height: 1.6;
-            padding: 20px;
-        }
-
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        /* --- Main Hero Section --- */
-        header {
-            text-align: center;
-            padding: 80px 20px;
-            background-color: var(--accent-sage);
-            border-radius: 50px;
-            /* Increased roundness */
-            margin-bottom: 40px;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            gap: 25px;
-        }
-
-        h1 {
-            /* Ultra-rounded heading font */
-            font-family: 'Comfortaa', cursive;
-            font-weight: 700;
-            font-size: 3.5rem;
-            color: var(--earthy-brown);
-        }
-
-        .description {
-            font-size: 1.2rem;
-            max-width: 600px;
-            color: var(--text-color);
-            font-weight: 300;
-        }
-
-        /* --- Linktree Section --- */
-        .links-section {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            margin-bottom: 60px;
-            align-items: center;
-        }
-
-        .link-card {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
-
-            background-color: var(--warm-yellow);
-            color: var(--earthy-brown);
-            text-decoration: none;
-            width: 100%;
-            max-width: 400px;
-            padding: 20px;
-            border-radius: 30px;
-            /* Pill-shaped links */
-            font-weight: 600;
-            font-family: 'Comfortaa', cursive;
-            transition: all 0.3s ease;
-            border: 1px solid rgba(0, 0, 0, 0.03);
-        }
-
-        .link-card:hover {
-            transform: scale(1.02);
-            background-color: #d8b68a;
-        }
-
-        /* --- Work Examples Section --- */
-        .work-section {
-            margin-top: 40px;
-        }
-
-        .section-title {
-            font-family: 'Comfortaa', cursive;
-            font-weight: 700;
-            font-size: 2.2rem;
-            margin-bottom: 30px;
-            text-align: center;
-            color: var(--primary-green);
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .card {
-            background: white;
-            padding: 30px;
-            border-radius: 40px;
-            /* Very rounded corners for cards */
-            box-shadow: 0 15px 30px rgba(148, 166, 132, 0.08);
-            border: 1px solid var(--accent-sage);
-        }
-
-        .card h3 {
-            font-family: 'Comfortaa', cursive;
-            margin-bottom: 12px;
-            color: var(--earthy-brown);
-        }
-
-        audio,
-        video {
-            width: 100%;
-            margin-top: 20px;
-            border-radius: 20px;
-            /* Rounding the media players */
-            outline: none;
-        }
-
-        video {
-            background: #000;
-            max-height: 200px;
-            object-fit: cover;
-        }
-
-        footer {
-            text-align: center;
-            padding: 60px 0;
-            font-size: 0.9rem;
-            color: var(--primary-green);
-            font-family: 'Comfortaa', cursive;
-        }
-
-        .link_img {
-            border-radius: 100%;
-        }
-
-        @media (max-width: 600px) {
-            h1 {
-                font-size: 2.5rem;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
     <div class="container">
         <header>
+
             <h1>Compact_pie7</h1>
+
             <p class="description">
                 I am music composer with a year of experience, i've done a lot of genres, i can make a music for your
                 game, video, animation, or any other purposes you can ever need.
@@ -188,24 +27,26 @@
                 <img src="https://www.google.com/s2/favicons?domain=soundcloud.com&sz=32" class="link_img" alt="">
                 SoundCloud</a>
         </header>
+
         <section class="work-section">
             <h2 class="section-title">Latest Works</h2>
             <div class="grid">
 
                 <div class="card">
-                    <h3>Track Title One</h3>
-                    <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
+                    <h3>Bossa nova genre</h3>
+                    <p>Bossa nova is a relaxing, lyrical blend of Brazilian samba and cool jazz that emerged in Rio de
+                        Janeiro in the late 1950s. Known as "new wave" or "new trend" in Portuguese.</p>
                     <audio controls>
-                        <source src="your-audio-file.mp3" type="audio/mpeg">
+                        <source src="/files/Bossa nova.mp3" type="audio/mpeg">
                     </audio>
                 </div>
 
                 <div class="card">
-                    <h3>Music Video</h3>
-                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.</p>
-                    <video controls>
-                        <source src="your-video-file.mp4" type="video/mp4">
-                    </video>
+                    <h3>Hip-hop rap genre</h3>
+                    <p>I've got inspired by miyagi & Andy Panda "HATTORI" music album and made this beat.</p>
+                    <audio controls>
+                        <source src="/files/Hattori type beat.mp3" type="audio/mpeg">
+                    </audio>
                 </div>
 
             </div>
