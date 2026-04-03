@@ -1,12 +1,202 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Page Title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Musician Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Quicksand:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #f9f7f2;
+            --primary-green: #94a684;
+            --warm-yellow: #e4c59e;
+            --earthy-brown: #8d7b68;
+            --text-color: #4a443f;
+            --accent-sage: #c7d3bf;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Quicksand', sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* --- Main Hero Section --- */
+        header {
+            text-align: center;
+            padding: 80px 20px;
+            background: linear-gradient(180deg, var(--accent-sage) 0%, var(--bg-color) 100%);
+            border-radius: 40px;
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-family: 'DM+Serif+Display', serif;
+            font-size: 4rem;
+            color: var(--earthy-brown);
+            margin-bottom: 10px;
+        }
+
+        .description {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+            color: var(--text-color);
+        }
+
+        /* --- Linktree Section --- */
+        .links-section {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 60px;
+            align-items: center;
+        }
+
+        .link-card {
+            background-color: var(--warm-yellow);
+            color: var(--earthy-brown);
+            text-decoration: none;
+            width: 100%;
+            max-width: 400px;
+            padding: 18px;
+            text-align: center;
+            border-radius: 15px;
+            font-weight: 500;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .link-card:hover {
+            transform: translateY(-3px);
+            background-color: #d8b68a;
+        }
+
+        /* --- Work Examples Section --- */
+        .work-section {
+            margin-top: 40px;
+        }
+
+        .section-title {
+            font-family: 'DM+Serif+Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            text-align: center;
+            color: var(--primary-green);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 25px;
+            box-shadow: 0 10px 20px rgba(148, 166, 132, 0.1);
+            border: 1px solid var(--accent-sage);
+        }
+
+        .card h3 {
+            margin-bottom: 15px;
+            color: var(--earthy-brown);
+        }
+
+        audio, video {
+            width: 100%;
+            margin-top: 15px;
+            border-radius: 10px;
+            outline: none;
+        }
+
+        video {
+            background: #000;
+            max-height: 200px;
+            object-fit: cover;
+        }
+
+        footer {
+            text-align: center;
+            padding: 60px 0;
+            font-size: 0.9rem;
+            color: var(--primary-green);
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 2.5rem; }
+        }
+    </style>
 </head>
 <body>
 
-<h1>My First Heading</h1>
-<p>My first paragraph.</p>
+    <div class="container">
+        <header>
+            <h1>Lorem Ipsum</h1>
+            <p class="description">
+                Dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.
+            </p>
+        </header>
+
+        <section class="links-section">
+            <a href="#" class="link-card">Spotify Official</a>
+            <a href="#" class="link-card">Apple Music</a>
+            <a href="#" class="link-card">Instagram Profile</a>
+            <a href="#" class="link-card">Latest Music Video</a>
+        </section>
+
+        <section class="work-section">
+            <h2 class="section-title">Latest Works</h2>
+            <div class="grid">
+                
+                <div class="card">
+                    <h3>Track Title One</h3>
+                    <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
+                    <audio controls>
+                        <source src="your-audio-file.mp3" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+
+                <div class="card">
+                    <h3>Music Video</h3>
+                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.</p>
+                    <video controls>
+                        <source src="your-video-file.mp4" type="video/mp4">
+                        Your browser does not support the video element.
+                    </video>
+                </div>
+
+                <div class="card">
+                    <h3>Track Title Two</h3>
+                    <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt.</p>
+                    <audio controls>
+                        <source src="your-audio-file-2.mp3" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2026 Lorem Ipsum Musician. All rights reserved.</p>
+        </footer>
+    </div>
 
 </body>
 </html>
