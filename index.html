@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Musician Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Quicksand:wght@400;500&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;700&family=Fredoka:wght@300;500&display=swap"
+        rel="stylesheet">
     <style>
         :root {
             --bg-color: #f9f7f2;
             --primary-green: #94a684;
             --warm-yellow: #e4c59e;
-            --earthy-brown: #8d7b68;
+            --earthy-brown: #756555;
             --text-color: #4a443f;
             --accent-sage: #c7d3bf;
         }
@@ -24,7 +27,8 @@
         body {
             background-color: var(--bg-color);
             color: var(--text-color);
-            font-family: 'Quicksand', sans-serif;
+            /* Primary rounded body font */
+            font-family: 'Fredoka', sans-serif;
             line-height: 1.6;
             padding: 20px;
         }
@@ -39,22 +43,30 @@
             text-align: center;
             padding: 80px 20px;
             background-color: var(--accent-sage);
-            border-radius: 40px;
+            border-radius: 50px;
+            /* Increased roundness */
             margin-bottom: 40px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 25px;
         }
 
         h1 {
-            font-family: 'DM+Serif+Display', serif;
-            font-size: 4rem;
+            /* Ultra-rounded heading font */
+            font-family: 'Comfortaa', cursive;
+            font-weight: 700;
+            font-size: 3.5rem;
             color: var(--earthy-brown);
-            margin-bottom: 10px;
         }
 
         .description {
             font-size: 1.2rem;
             max-width: 600px;
-            margin: 0 auto;
             color: var(--text-color);
+            font-weight: 300;
         }
 
         /* --- Linktree Section --- */
@@ -67,21 +79,28 @@
         }
 
         .link-card {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+
             background-color: var(--warm-yellow);
             color: var(--earthy-brown);
             text-decoration: none;
             width: 100%;
             max-width: 400px;
-            padding: 18px;
-            text-align: center;
-            border-radius: 15px;
-            font-weight: 500;
-            transition: transform 0.3s ease, background-color 0.3s ease;
-            border: 1px solid rgba(0,0,0,0.05);
+            padding: 20px;
+            border-radius: 30px;
+            /* Pill-shaped links */
+            font-weight: 600;
+            font-family: 'Comfortaa', cursive;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 0, 0, 0.03);
         }
 
         .link-card:hover {
-            transform: translateY(-3px);
+            transform: scale(1.02);
             background-color: #d8b68a;
         }
 
@@ -91,8 +110,9 @@
         }
 
         .section-title {
-            font-family: 'DM+Serif+Display', serif;
-            font-size: 2.5rem;
+            font-family: 'Comfortaa', cursive;
+            font-weight: 700;
+            font-size: 2.2rem;
             margin-bottom: 30px;
             text-align: center;
             color: var(--primary-green);
@@ -106,21 +126,25 @@
 
         .card {
             background: white;
-            padding: 25px;
-            border-radius: 25px;
-            box-shadow: 0 10px 20px rgba(148, 166, 132, 0.1);
+            padding: 30px;
+            border-radius: 40px;
+            /* Very rounded corners for cards */
+            box-shadow: 0 15px 30px rgba(148, 166, 132, 0.08);
             border: 1px solid var(--accent-sage);
         }
 
         .card h3 {
-            margin-bottom: 15px;
+            font-family: 'Comfortaa', cursive;
+            margin-bottom: 12px;
             color: var(--earthy-brown);
         }
 
-        audio, video {
+        audio,
+        video {
             width: 100%;
-            margin-top: 15px;
-            border-radius: 10px;
+            margin-top: 20px;
+            border-radius: 20px;
+            /* Rounding the media players */
             outline: none;
         }
 
@@ -135,40 +159,44 @@
             padding: 60px 0;
             font-size: 0.9rem;
             color: var(--primary-green);
+            font-family: 'Comfortaa', cursive;
+        }
+
+        .link_img {
+            border-radius: 100%;
         }
 
         @media (max-width: 600px) {
-            h1 { font-size: 2.5rem; }
+            h1 {
+                font-size: 2.5rem;
+            }
         }
     </style>
 </head>
+
 <body>
 
     <div class="container">
         <header>
-            <h1>Lorem Ipsum</h1>
+            <h1>Compact_pie7</h1>
             <p class="description">
-                Dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.
+                I am music composer with a year of experience, i've done a lot of genres, i can make a music for your
+                game, video, animation, or any other purposes you can ever need.
             </p>
+
+            <a href="#" class="link-card">
+                <img src="https://www.google.com/s2/favicons?domain=soundcloud.com&sz=32" class="link_img" alt="">
+                SoundCloud</a>
         </header>
-
-        <section class="links-section">
-            <a href="#" class="link-card">Spotify Official</a>
-            <a href="#" class="link-card">Apple Music</a>
-            <a href="#" class="link-card">Instagram Profile</a>
-            <a href="#" class="link-card">Latest Music Video</a>
-        </section>
-
         <section class="work-section">
             <h2 class="section-title">Latest Works</h2>
             <div class="grid">
-                
+
                 <div class="card">
                     <h3>Track Title One</h3>
                     <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
                     <audio controls>
                         <source src="your-audio-file.mp3" type="audio/mpeg">
-                        Your browser does not support the audio element.
                     </audio>
                 </div>
 
@@ -177,26 +205,17 @@
                     <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.</p>
                     <video controls>
                         <source src="your-video-file.mp4" type="video/mp4">
-                        Your browser does not support the video element.
                     </video>
-                </div>
-
-                <div class="card">
-                    <h3>Track Title Two</h3>
-                    <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt.</p>
-                    <audio controls>
-                        <source src="your-audio-file-2.mp3" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                    </audio>
                 </div>
 
             </div>
         </section>
 
         <footer>
-            <p>&copy; 2026 Lorem Ipsum Musician. All rights reserved.</p>
+            <p>&copy; 2026 compact_pie7.</p>
         </footer>
     </div>
 
 </body>
+
 </html>
