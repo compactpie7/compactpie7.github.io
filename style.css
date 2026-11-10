@@ -1,180 +1,609 @@
+/* ==========================================================================
+   Compact_pie7 — стили сайта (mobile-first, один файл)
+   Содержание: 1. Токены  2. База  3. Шапка  4. Hero  5. Секции и кнопки
+               6. Музыка и плеер  7. About  8. Elsewhere  9. Подвал
+               10. Широкие экраны  11. Reduced motion
+   ========================================================================== */
+
+/* 1. Токены ---------------------------------------------------------------- */
 :root {
     --bg-color: #f9f7f2;
-    --primary-green: #94a684;
+    --bg-alt: #f0eadc;
+    --surface: #fffdf8;
     --warm-yellow: #e4c59e;
     --earthy-brown: #6c5d4f;
-    --text-color: #564f49;
-    --accent-sage: #c7d3bf;
+    --text-color: #3b352f;
+    --text-muted: #6a6158;
+    --accent-green: #2f4a3a;
+    --accent-green-hover: #243a2d;
+    --sage: #94a684;
+    --line: rgba(47, 74, 58, 0.22);
+
+    --font-heading: 'Comfortaa', cursive;
+    --font-body: 'Fredoka', sans-serif;
+
+    --space-1: 0.5rem;
+    --space-2: 1rem;
+    --space-3: 1.5rem;
+    --space-4: 2.5rem;
+    --space-5: clamp(3.5rem, 9vw, 7rem);
+
+    --radius: 6px;
+    --wrap-width: 72rem;
+    --header-height: 3.5rem;
 }
 
-* {
+/* 2. База ------------------------------------------------------------------ */
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+[hidden] {
+    display: none !important;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: calc(var(--header-height) + 1rem);
+    -webkit-text-size-adjust: 100%;
+}
+
 body {
     background-color: var(--bg-color);
-    background-image: url('/files/Elegant\ beige\ waves\ on\ soft\ background.png');
-    background-attachment: fixed;
+    color: var(--text-color);
+    font-family: var(--font-body);
+    font-weight: 300;
+    font-size: 1.0625rem;
+    line-height: 1.65;
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+}
+
+:focus-visible {
+    outline: 3px solid var(--accent-green);
+    outline-offset: 3px;
+    border-radius: 2px;
+}
+
+.wrap {
+    width: 100%;
+    max-width: var(--wrap-width);
+    margin: 0 auto;
+    padding-inline: var(--space-3);
+}
+
+.skip-link {
+    position: absolute;
+    left: var(--space-2);
+    top: -4rem;
+    z-index: 20;
+    padding: 0.6rem 1rem;
+    background: var(--accent-green);
+    color: #fff;
+    border-radius: var(--radius);
+    text-decoration: none;
+}
+
+.skip-link:focus {
+    top: var(--space-2);
+}
+
+/* 3. Шапка ----------------------------------------------------------------- */
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: rgba(249, 247, 242, 0.92);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+}
+
+.site-header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-2);
+    min-height: var(--header-height);
+}
+
+.site-logo {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--accent-green);
+    text-decoration: none;
+}
+
+/* 4. Hero ------------------------------------------------------------------ */
+.hero {
+    position: relative;
+    padding-block: var(--space-5);
+    background-color: var(--bg-color);
+    background-image: url('files/Elegant%20beige%20waves%20on%20soft%20background.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    color: var(--text-color);
-    /* Primary rounded body font */
-    font-family: 'Fredoka', sans-serif;
-    line-height: 1.6;
-    padding: 20px;
+    border-bottom: 1px solid var(--line);
 }
 
-.container {
-    max-width: 900px;
-    margin: 0 auto;
-}
-
-/* --- Main Hero Section --- */
-header {
-    text-align: center;
-    padding: 80px 20px;
-    background-color: var(--accent-sage);
-    border-radius: 50px;
-    /* Increased roundness */
-    margin-bottom: 40px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 25px;
-}
-
-h1 {
-    /* Ultra-rounded heading font */
-    font-family: 'Comfortaa', cursive;
+.eyebrow {
+    margin-bottom: var(--space-2);
+    font-family: var(--font-heading);
     font-weight: 700;
-    font-size: 3.5rem;
-    color: var(--earthy-brown);
+    font-size: 0.85rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent-green);
 }
 
+.hero-title {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: clamp(2.4rem, 12.5vw, 7.5rem);
+    line-height: 1;
+    letter-spacing: -0.02em;
+    color: var(--accent-green);
+    overflow-wrap: anywhere;
+}
 
-.description {
-    font-size: 1.2rem;
-    max-width: 600px;
+.hero-text {
+    margin-top: var(--space-4);
+    display: grid;
+    gap: var(--space-3);
+}
+
+.hero-description {
+    max-width: 34rem;
+    font-size: 1.15rem;
     color: var(--text-color);
-    font-weight: 300;
 }
 
-/* --- Linktree Section --- */
-.links-section {
+.hero-actions {
     display: flex;
-    flex-direction: column;
-    gap: 15px;
-    margin-bottom: 60px;
-    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--space-2);
 }
 
-.link-card {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
+/* 5. Секции, кнопки -------------------------------------------------------- */
+.section {
+    padding-block: var(--space-5);
+}
 
-    background-color: var(--warm-yellow);
+.section+.section {
+    border-top: 1px solid var(--line);
+}
+
+.section-head {
+    display: flex;
+    align-items: baseline;
+    gap: var(--space-2);
+    margin-bottom: var(--space-4);
+}
+
+.section-index {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 0.9rem;
     color: var(--earthy-brown);
-    text-decoration: none;
-    width: 100%;
-    max-width: 400px;
-    padding: 20px;
-    border-radius: 30px;
-    /* Pill-shaped links */
-    font-weight: 600;
-    font-family: 'Comfortaa', cursive;
-    transition: all 0.3s ease;
-    border: 1px solid rgba(0, 0, 0, 0.03);
-}
-
-.link-card:hover {
-    transform: scale(1.02);
-    background-color: #d8b68a;
-}
-
-/* --- Work Examples Section --- */
-.work-section {
-    margin-top: 40px;
 }
 
 .section-title {
-    font-family: 'Comfortaa', cursive;
+    font-family: var(--font-heading);
     font-weight: 700;
-    font-size: 2.2rem;
-    margin-bottom: 30px;
-    text-align: center;
-    color: var(--primary-green);
+    font-size: clamp(1.8rem, 6vw, 3rem);
+    line-height: 1.15;
+    color: var(--accent-green);
 }
 
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 2.9rem;
+    padding: 0.6rem 1.5rem;
+    border: 2px solid var(--accent-green);
+    border-radius: var(--radius);
+    font: 500 1rem var(--font-body);
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-.card {
-    background: white;
-    padding: 30px;
-    border-radius: 40px;
-    /* Very rounded corners for cards */
-    box-shadow: 0 15px 30px rgba(148, 166, 132, 0.08);
-    border: 1px solid var(--accent-sage);
-
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
+.button-primary {
+    background: var(--accent-green);
+    color: #fff;
 }
 
-.card h3 {
-    font-family: 'Comfortaa', cursive;
-    margin-bottom: 6px;
+.button-primary:hover {
+    background: var(--accent-green-hover);
+}
+
+.button-outline {
+    background: transparent;
+    color: var(--accent-green);
+}
+
+.button-outline:hover {
+    background: var(--accent-green);
+    color: #fff;
+}
+
+.button-small {
+    min-height: 2.75rem;
+    padding-inline: 1.25rem;
+    font-size: 0.95rem;
+}
+
+.text-link {
+    display: inline-flex;
+    align-items: center;
+    min-height: 2.75rem;
+    font-size: 0.95rem;
     color: var(--earthy-brown);
+}
 
-    font-size: 1.5rem;
+
+.site-nav {
+    display: flex;
+    gap: var(--space-2);
+    list-style: none;
+}
+
+.site-nav a {
+    display: inline-block;
+    padding: 0.7rem 0.15rem;
+    font-weight: 500;
+    font-size: 0.95rem;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.2s ease;
+}
+
+.site-nav a:hover {
+    border-bottom-color: var(--accent-green);
+}
+
+
+/* 6. Музыка и плеер -------------------------------------------------------- */
+.music-layout {
+    display: grid;
+    gap: var(--space-4);
+}
+
+.player {
+    padding: var(--space-3);
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    border-top: 4px solid var(--accent-green);
+}
+
+.player-now {
+    display: grid;
+    gap: 0.2rem;
+    margin-bottom: var(--space-2);
+}
+
+.player-label {
+    font-size: 0.8rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+}
+
+.player-title {
+    font-family: var(--font-heading);
     font-weight: 700;
+    font-size: 1.3rem;
+    line-height: 1.3;
+    color: var(--accent-green);
 }
 
-.card p {
-    opacity: .6;
-    margin-bottom: auto;
+.player-controls {
+    display: flex;
+    align-items: center;
+    gap: var(--space-1);
+    margin-bottom: var(--space-2);
 }
 
-audio,
-video {
-    width: 100%;
-    margin-top: 20px;
-    border-radius: 20px;
-    /* Rounding the media players */
-    outline: none;
+.player-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    border: 2px solid var(--accent-green);
+    border-radius: 50%;
+    background: transparent;
+    color: var(--accent-green);
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-video {
-    background: #000;
-    max-height: 200px;
-    object-fit: cover;
+.player-button:hover:not(:disabled) {
+    background: var(--accent-green);
+    color: #fff;
 }
 
-footer {
-    text-align: center;
-    padding: 60px 0 0;
+.player-button:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+}
+
+.player-toggle {
+    width: 3.5rem;
+    height: 3.5rem;
+    background: var(--accent-green);
+    color: #fff;
+}
+
+.player-toggle:hover:not(:disabled) {
+    background: var(--accent-green-hover);
+}
+
+.player-toggle .icon-pause,
+.player[data-state="playing"] .player-toggle .icon-play {
+    display: none;
+}
+
+.player[data-state="playing"] .player-toggle .icon-pause {
+    display: block;
+}
+
+.player-timeline {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: var(--space-2);
+}
+
+.player-time {
+    min-width: 2.6rem;
     font-size: 0.9rem;
-    color: var(--primary-green);
-    font-family: 'Comfortaa', cursive;
+    font-variant-numeric: tabular-nums;
+    color: var(--text-muted);
 }
 
-.link_img {
-    border-radius: 100%;
+.player-time:last-child {
+    text-align: right;
 }
 
-@media (max-width: 600px) {
-    h1 {
-        font-size: 2.5rem;
+.player-seek {
+    width: 100%;
+    height: 2.75rem;
+    accent-color: var(--accent-green);
+    background: transparent;
+    cursor: pointer;
+}
+
+.player-seek:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+.player-status {
+    min-height: 1.5rem;
+    margin-top: var(--space-1);
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.player[data-state="error"] .player-status {
+    color: #8a2c1f;
+    font-weight: 500;
+}
+
+.track-list {
+    list-style: none;
+    border-top: 1px solid var(--line);
+}
+
+.track {
+    display: grid;
+    grid-template-columns: 2.4rem 1fr;
+    gap: var(--space-2);
+    padding-block: var(--space-3);
+    border-bottom: 1px solid var(--line);
+}
+
+.track-number {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: var(--earthy-brown);
+}
+
+.track-title {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.35rem;
+    line-height: 1.3;
+    color: var(--text-color);
+}
+
+.track.is-current .track-title {
+    color: var(--accent-green);
+}
+
+.track.is-current .track-number::after {
+    content: " ●";
+    color: var(--accent-green);
+}
+
+.track-description {
+    max-width: 38rem;
+    margin-top: var(--space-1);
+    color: var(--text-muted);
+}
+
+.track-native audio {
+    width: 100%;
+    margin-top: var(--space-2);
+}
+
+.track-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-2);
+    margin-top: var(--space-2);
+}
+
+
+/* 7. About ------------------------------------------------------------------ */
+.about {
+    background: var(--bg-alt);
+}
+
+.about-layout {
+    display: grid;
+    gap: var(--space-4);
+}
+
+.about-lead {
+    max-width: 30rem;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: clamp(1.4rem, 5vw, 2.2rem);
+    line-height: 1.35;
+    color: var(--text-color);
+}
+
+.about-facts {
+    border-top: 1px solid var(--line);
+}
+
+.about-fact {
+    display: grid;
+    gap: 0.2rem;
+    padding-block: var(--space-2);
+    border-bottom: 1px solid var(--line);
+}
+
+.about-fact dt {
+    font-size: 0.8rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+}
+
+.about-fact dd {
+    font-weight: 500;
+}
+
+/* 8. Elsewhere ------------------------------------------------------------- */
+.elsewhere-text {
+    margin-bottom: var(--space-2);
+    color: var(--text-muted);
+}
+
+.elsewhere-link {
+    display: grid;
+    gap: 0.3rem;
+    padding-block: var(--space-2);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    text-decoration: none;
+    transition: padding-left 0.25s ease;
+}
+
+.elsewhere-link:hover {
+    padding-left: var(--space-2);
+}
+
+.elsewhere-name {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: clamp(2rem, 9vw, 4.5rem);
+    line-height: 1.1;
+    color: var(--accent-green);
+}
+
+.elsewhere-url {
+    color: var(--text-muted);
+    overflow-wrap: anywhere;
+}
+
+/* 9. Подвал ---------------------------------------------------------------- */
+.site-footer {
+    padding-block: var(--space-4);
+    border-top: 1px solid var(--line);
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+/* 10. Широкие экраны ------------------------------------------------------- */
+@media (min-width: 48em) {
+    .wrap {
+        padding-inline: var(--space-4);
+    }
+
+    .site-nav {
+        gap: var(--space-3);
+    }
+
+    .hero-text {
+        grid-template-columns: 1fr auto;
+        align-items: end;
+        gap: var(--space-4);
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+        min-width: 11rem;
+    }
+
+    .about-layout {
+        grid-template-columns: 1.1fr 1fr;
+        align-items: start;
+        gap: var(--space-5);
+    }
+
+    .track {
+        grid-template-columns: 3.5rem 1fr;
     }
 }
+
+@media (min-width: 64em) {
+    .music-layout {
+        grid-template-columns: 22rem 1fr;
+        align-items: start;
+        gap: var(--space-5);
+    }
+
+    .player {
+        position: sticky;
+        top: calc(var(--header-height) + 1.5rem);
+    }
+
+    .track-list {
+        margin-top: 0;
+    }
+}
+
+/* 11. Reduced motion ------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+
+    .elsewhere-link:hover {
+        padding-left: 0;
+    }
+}
+
